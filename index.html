@@ -3,6 +3,8 @@
         <title>Only for drigo</title>
     </head>
     <body class="primary">
+        <h1 style="font-family:Arial, Helvetica, sans-serif" class="button ultima">Ultima: null</h1>
+
         <button class="button" onclick="send('Eu te amo ❤')">Enviar "eu te amo"</button>
         <button class="button"  onclick="send('to de mal 😠')">Enviar "to de mal😠"</button>
         <button class="button"  onclick="send('to de mal 😥')">Enviar "to de mal😥"</button>
@@ -20,7 +22,7 @@
         <button class="button"  onclick="send('me come? 🥺')">Enviar "me come? 🥺"</button>
         <button class="button"  onclick="send('vem me comer 🥺')">Enviar "vem me comer 🥺"</button>
         <br>
-        <input type="text" class="customizado" placeholder="Mensagem customizada">
+        <input style="padding:08px 08px;" type="text" class="customizado" placeholder="Mensagem customizada">
         <button class="button bt_customizado">Enviar Texto Customizado</button>
         
         
@@ -32,24 +34,23 @@
                 box-sizing: border-box;
             }
 
-            .primary {
+            body{
                 height:100%;
                 width:100vh;
-                background-color:azure;
-            }   
+                background:linear-gradient(rgba(69, 196, 255, 0), rgba(0, 107, 207, 0), 0.7);
+            }
 
-            .button{
-                background-color:black;
-                font-size:10%;
-                color:white;
-                font-family:Arial, Helvetica, sans-serif;
-                height:25%;
-                width:25%; 
+            .button {
+                padding:08px 08px;
             }
         </style>
 
         <script>
+            const ultimaa = document.querySelector(".ultima")
+            var ultima = 0
             function send(msg){
+                ultima = msg
+                ultimaa.textContent = `Ultima: ${msg}`
                 msg = "**"+msg+"**"
 
                 fetch(
