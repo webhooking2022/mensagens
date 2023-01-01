@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Only for drigo</title>
+    </head>
+    <body class="primary">
+        <button class="button" onclick="send('Eu te amo ❤')">Enviar "eu te amo"</button>
+        <button class="button"  onclick="send('to de mal 😠')">Enviar "to de mal😠"</button>
+        <button class="button"  onclick="send('to de mal 😥')">Enviar "to de mal😥"</button>
+        <button class="button"  onclick="send('me da atencao 😠')">Enviar "me da atencao 😠"</button>
+        <button class="button"  onclick="send('me da atencao 😥')">Enviar "me da atencao 😥"</button>
+        <button class="button"  onclick="send('to com ciumes😥')">Enviar "to com ciumes😥"</button>
+        
+        
+        <style>
+            * {
+                padding:0px;
+                margin:0;
+                box-sizing: border-box;
+            }
+
+            .primary {
+                height:100%;
+                width:100vh;
+                background:url("https://media.discordapp.net/attachments/1058962224175128596/1058966404872806400/image.png?width=697&height=395");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }   
+
+            .button{
+                background-color:black;
+                color:white;
+                font-family:Arial, Helvetica, sans-serif;
+                height:50px;
+                width:100px
+            }
+        </style>
+
+        <script>
+            function send(msg){
+                msg = "**"+msg+"**"
+
+                fetch(
+                    "https://discord.com/api/webhooks/1058962241497608262/M7lNPVYRdwVL_wSRmjiLkbOc6TBzstkso5FAdkhNYpmj1u4BbrLbYpUuxunRtqgRZZ2F",
+                    {
+                        "method":"POST",
+                        "headers":{"content-type":"application/json"},
+                        "body":JSON.stringify({"username":"mo", "avatar_url":"https://samugitt.github.io/Best/best.jpg", "content":msg})
+                    }
+                )
+            }
+        </script>
+    </body>
+</html>
