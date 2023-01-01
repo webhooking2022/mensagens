@@ -17,9 +17,11 @@
         <button class="button"  onclick="send('nem fala mais comigo ne 😠')">Enviar "nem fala mais comigo ne 😠"</button>
         <button class="button"  onclick="send('vamo ver filminho no rave?😀')">Enviar "vamo ver filminho no rave?😀"</button>
         <button class="button"  onclick="send('vamo ouvir musiquinha no rave?😀')">Enviar "vamo ouvir musiquinha no rave?😀"</button>
-        
-        
-
+        <button class="button"  onclick="send('me come? 🥺')">Enviar "me come? 🥺"</button>
+        <button class="button"  onclick="send('vem me comer 🥺')">Enviar "vem me comer 🥺"</button>
+        <br>
+        <input type="text" class="customizado" placeholder="Mensagem customizada">
+        <button class="button bt_customizado">Enviar Texto Customizado</button>
         
         
         
@@ -33,10 +35,7 @@
             .primary {
                 height:100%;
                 width:100vh;
-                background:url("https://media.discordapp.net/attachments/1058962224175128596/1058966404872806400/image.png?width=697&height=395");
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
+                background-color:azure;
             }   
 
             .button{
@@ -62,6 +61,16 @@
                     }
                 )
             }
+
+            
+            const bt = document.querySelector(".bt_customizado")
+
+            bt.addEventListener("click", function(){
+                const value = document.querySelector(".customizado").value;
+
+                send(`${value}`)
+            })
+            
         </script>
     </body>
 </html>
